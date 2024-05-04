@@ -77,7 +77,7 @@ Hide/Show table of contents
        '''bash
 
 
-       # initialize an existing directory as a Git repository
+       # initialize an existing directory as a Git repository or To initialize empty repo in current directory
        git init
    
 
