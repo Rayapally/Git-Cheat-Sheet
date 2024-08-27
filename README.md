@@ -40,6 +40,10 @@
                 <td><code>git pull</code></td>
                 <td>Fetch from and integrate with another repository or a local branch</td>
             </tr>
+             <tr>
+                <td><code>git log</code></td>
+                <td>Fetch Used to view commit history of a git repostory</td>
+            </tr>
             <!-- Add more rows as needed -->
         </tbody>
     </table>
