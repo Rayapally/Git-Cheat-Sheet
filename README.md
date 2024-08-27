@@ -42,7 +42,7 @@
             </tr>
              <tr>
                 <td><code>git log</code></td>
-                <td>Fetch Used to view commit history of a git repostory</td>
+                <td>Used to view commit history of a git repostory</td>
             </tr>
             <!-- Add more rows as needed -->
         </tbody>
