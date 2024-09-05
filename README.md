@@ -29,29 +29,45 @@
                 <td>used to configure user email for our git</td>
             </tr>
             <tr>
-                <td><code>git clone &lt;repository URL&gt;</code></td>
-                <td>Clone a repository into a new directory</td>
+                <td><code>git add filename</code></td>
+                <td>Used to track a file name</td>
             </tr>
             <tr>
-                <td><code>git add &lt;file&gt;</code></td>
-                <td>Add file contents to the index</td>
+                <td><code> git add * </code></td>
+                </tr>
+            <tr>
+                <td><code>git add .</code></td>
+                <td>used to track all files in current directory (including hidden files)</td>
             </tr>
             <tr>
-                <td><code>git commit -m "Commit message"</code></td>
-                <td>Record changes to the repository</td>
+                <td><code>git add -f filename</code></td>
+                <td>to track files forcefully</td>
             </tr>
             <tr>
-                <td><code>git push</code></td>
-                <td>Upload local repository content to a remote repository</td>
+                <td><code>git rm --cached filename</code></td>
+                <td>used to untrack the file</td>
             </tr>
             <tr>
-                <td><code>git pull</code></td>
-                <td>Fetch from and integrate with another repository or a local branch</td>
+                <td><code>git commit -m "message" filename</code></td>
+                <td>to commit a file</td>
             </tr>
-             <tr>
+            <tr>
+                <td><code>git commit -m "message" .</code></td>
+                <td>used to commit all files which are present in staging area</td>
+            </tr>
+            <tr>
                 <td><code>git log</code></td>
-                <td>Used to view commit history of a git repostory</td>
+                <td>used to see the history of the git</td>
             </tr>
+            <tr>
+                <td><code>git log --oneline</code></td>
+                <td>used to see only commit ID's and messages</td>
+            </tr>
+            <tr>
+                <td><code>git log --follow --all filename</code></td>
+                <td>used to see the no of commits for a single file</td>
+            </tr>
+
             <!-- Add more rows as needed -->
         </tbody>
     </table>
