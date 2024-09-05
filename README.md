@@ -24,12 +24,10 @@
                 <td><code>git config user.name "username"</code></td>
                 <td>used to configure user name for our git</td>
             </tr>
-
-             <tr>
+            <tr>
                 <td><code>git config user.email "useremail"</code></td>
                 <td>used to configure user email for our git</td>
             </tr>
-            
             <tr>
                 <td><code>git clone &lt;repository URL&gt;</code></td>
                 <td>Clone a repository into a new directory</td>
