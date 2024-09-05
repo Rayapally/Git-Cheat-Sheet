@@ -34,6 +34,7 @@
             </tr>
             <tr>
                 <td><code> git add * </code></td>
+                <td><code> used to track all files & folders </code></td>
                 </tr>
             <tr>
                 <td><code>git add .</code></td>
