@@ -17,9 +17,19 @@
         </thead>
         <tbody>
             <tr>
-                <td><code>git init</code></td>
+                <td><code>git init .</code></td>
                 <td>Initialize a new Git repository in the current directory</td>
             </tr>
+            <tr>
+                <td><code>git config user.name "username"</code></td>
+                <td>used to configure user name for our git</td>
+            </tr>
+
+             <tr>
+                <td><code>git config user.email "useremail"</code></td>
+                <td>used to configure user email for our git</td>
+            </tr>
+            
             <tr>
                 <td><code>git clone &lt;repository URL&gt;</code></td>
                 <td>Clone a repository into a new directory</td>
