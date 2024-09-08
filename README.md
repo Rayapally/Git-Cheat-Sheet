@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Commands Reference</title>
+    <title>Git Cheat Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Git Commands Reference</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
+    <h1>Git Cheat Sheet</h1>
+    <table>
         <thead>
             <tr>
                 <th>Command</th>
@@ -16,197 +46,238 @@
         </thead>
         <tbody>
             <tr>
-                <td><code>git branch -d branch-name</code></td>
-                <td>Delete a branch (only if it has been fully merged).</td>
+                <td>yum install git -y</td>
+                <td>To install git in Linux machine</td>
             </tr>
             <tr>
-                <td><code>git branch -D branch-name</code></td>
-                <td>Forcefully delete a branch (even if it hasn’t been merged).</td>
+                <td>git init .</td>
+                <td>To initialize empty repo in current directory</td>
             </tr>
             <tr>
-                <td><code>git branch</code></td>
-                <td>List all branches.</td>
+                <td>git config user.name "username"</td>
+                <td>Configure username for Git</td>
             </tr>
             <tr>
-                <td><code>git branch branch-name</code></td>
-                <td>Create a new branch.</td>
+                <td>git config user.email "email"</td>
+                <td>Configure user email for Git</td>
             </tr>
             <tr>
-                <td><code>git branch -m old-branch new-branch</code></td>
-                <td>Rename a branch.</td>
+                <td>git add filename</td>
+                <td>Used to track a file</td>
             </tr>
             <tr>
-                <td><code>git checkout branch-name</code></td>
-                <td>Switch to a branch.</td>
+                <td>git add *</td>
+                <td>Track all files & folders</td>
             </tr>
             <tr>
-                <td><code>git checkout -b branch-name</code></td>
-                <td>Create and switch to a new branch.</td>
+                <td>git add .</td>
+                <td>Track all files in current directory (including hidden files)</td>
             </tr>
             <tr>
-                <td><code>git merge branch</code></td>
-                <td>Merge the specified branch into the current branch.</td>
+                <td>git add -f filename</td>
+                <td>Track files forcefully</td>
             </tr>
             <tr>
-                <td><code>git merge --abort</code></td>
-                <td>Abort the current merge process.</td>
+                <td>git rm --cached filename</td>
+                <td>Untrack the file</td>
             </tr>
             <tr>
-                <td><code>git rebase branch</code></td>
-                <td>Rebase the current branch onto the specified branch.</td>
+                <td>git commit -m "message" filename</td>
+                <td>Commit a file with a message</td>
             </tr>
             <tr>
-                <td><code>git cherry-pick commit-id</code></td>
-                <td>Apply the changes introduced by a specific commit from another branch.</td>
+                <td>git commit -m "message" .</td>
+                <td>Commit all files in the staging area with a message</td>
             </tr>
             <tr>
-                <td><code>git revert commit-id</code></td>
-                <td>Create a new commit that undoes the changes of a specific commit.</td>
+                <td>git log</td>
+                <td>See the history of the repository</td>
             </tr>
             <tr>
-                <td><code>git stash</code></td>
-                <td>Stash the current changes in a working directory.</td>
+                <td>git log --oneline</td>
+                <td>See only commit IDs and messages</td>
             </tr>
             <tr>
-                <td><code>git stash save "message"</code></td>
-                <td>Stash the current changes with a descriptive message.</td>
+                <td>git log -1</td>
+                <td>See the latest commit</td>
             </tr>
             <tr>
-                <td><code>git stash apply</code></td>
-                <td>Apply the most recent stash without removing it from the stash list.</td>
+                <td>git log -3</td>
+                <td>See the latest 3 commits</td>
             </tr>
             <tr>
-                <td><code>git stash list</code></td>
-                <td>List all stashes.</td>
+                <td>git log --follow --all filename</td>
+                <td>See the number of commits for a single file</td>
             </tr>
             <tr>
-                <td><code>git stash clear</code></td>
-                <td>Remove all stashes.</td>
+                <td>git show commit_id --name-only</td>
+                <td>See commit details along with file names</td>
             </tr>
             <tr>
-                <td><code>git stash pop</code></td>
-                <td>Apply the most recent stash and remove it from the stash list.</td>
+                <td>git show commit_id --stat</td>
+                <td>See the history of a file (modifications, data added, and deleted)</td>
             </tr>
             <tr>
-                <td><code>git stash drop</code></td>
-                <td>Remove the most recent stash.</td>
+                <td>git commit --amend -m "message"</td>
+                <td>Change the commit message for the latest commit</td>
             </tr>
             <tr>
-                <td><code>git stash drop stash@{2}</code></td>
-                <td>Remove a specific stash.</td>
+                <td>git commit --amend --author "username &lt;mail&gt;"</td>
+                <td>Change the author of the latest commit</td>
             </tr>
             <tr>
-                <td><code>git remote add origin repo-url</code></td>
-                <td>Link a local repository to a remote repository.</td>
+                <td>git commit --amend --no-edit</td>
+                <td>Commit the changes with the previous commit</td>
             </tr>
             <tr>
-                <td><code>git push -u origin branch-name</code></td>
-                <td>Push the local branch to the remote repository.</td>
+                <td>git reset --hard HEAD~1</td>
+                <td>Delete the latest commit along with the changes</td>
             </tr>
             <tr>
-                <td><code>git push -u origin branch-1 branch-2</code></td>
-                <td>Push multiple branches to the remote repository.</td>
+                <td>git reset --hard HEAD~3</td>
+                <td>Delete the latest 3 commits along with the changes</td>
             </tr>
             <tr>
-                <td><code>git push -u origin --all</code></td>
-                <td>Push all branches to the remote repository.</td>
+                <td>git reset --soft HEAD~1</td>
+                <td>Delete only commits but keep changes/actions</td>
             </tr>
             <tr>
-                <td><code>git clone repo-url</code></td>
-                <td>Clone a remote repository to the local machine.</td>
+                <td>git reset --soft HEAD~3</td>
+                <td>Delete only the latest commits but keep changes/actions</td>
             </tr>
             <tr>
-                <td><code>git pull origin branch</code></td>
-                <td>Fetch changes from the remote branch and merge them into the local branch.</td>
+                <td>git revert commit_id</td>
+                <td>Delete a particular commit action and add a new commit for the change</td>
             </tr>
             <tr>
-                <td><code>git fetch branch-name</code></td>
-                <td>Fetch the latest changes from a specific branch.</td>
+                <td>git branch</td>
+                <td>See the list of branches</td>
             </tr>
             <tr>
-                <td><code>git fetch --all</code></td>
-                <td>Fetch changes from all branches.</td>
+                <td>git branch branch-name</td>
+                <td>Create a branch</td>
             </tr>
             <tr>
-                <td><code>git merge origin/branch</code></td>
-                <td>Merge changes from the remote branch into the local branch.</td>
+                <td>git checkout branch-name</td>
+                <td>Switch from one branch to another</td>
             </tr>
             <tr>
-                <td><code>git push -u origin --delete branch-name</code></td>
-                <td>Delete a branch from the remote repository.</td>
+                <td>git checkout -b branch-name</td>
+                <td>Create and switch to a new branch at the same time</td>
             </tr>
             <tr>
-                <td><code>git remote rm origin</code></td>
-                <td>Remove the remote repository configuration.</td>
+                <td>git branch -m old-branch new-branch</td>
+                <td>Rename a branch</td>
             </tr>
             <tr>
-                <td><code>git remote rename old-link new-link</code></td>
-                <td>Rename a remote link.</td>
+                <td>git branch -d branch-name</td>
+                <td>Delete a branch</td>
             </tr>
             <tr>
-                <td><code>yum install git -y</code></td>
-                <td>Install Git on a Linux machine using <code>yum</code>.</td>
+                <td>git branch -D branch-name</td>
+                <td>Forcefully delete a branch</td>
             </tr>
             <tr>
-                <td><code>git init</code></td>
-                <td>Initialize an empty Git repository in the current directory.</td>
+                <td>git merge branch</td>
+                <td>Copy all commits from one branch to another</td>
             </tr>
             <tr>
-                <td><code>git config user.name "username"</code></td>
-                <td>Set the username for commits.</td>
+                <td>git cherry-pick commit-id</td>
+                <td>Copy a single commit from one branch to another</td>
             </tr>
             <tr>
-                <td><code>git config user.email "email"</code></td>
-                <td>Set the email for commits.</td>
+                <td>git merge --abort</td>
+                <td>Cancel the merge when conflicts arise</td>
             </tr>
             <tr>
-                <td><code>git add filename</code></td>
-                <td>Stage a specific file for commit.</td>
+                <td>git rebase branch</td>
+                <td>Copy all commits from one branch to another</td>
             </tr>
             <tr>
-                <td><code>git add *</code></td>
-                <td>Stage all files and folders (excluding hidden files).</td>
+                <td>git stash</td>
+                <td>Delete the changes permanently</td>
             </tr>
             <tr>
-                <td><code>git add .</code></td>
-                <td>Stage all files in the current directory (including hidden files).</td>
+                <td>git stash save "message"</td>
+                <td>Save the stash along with a message</td>
             </tr>
             <tr>
-                <td><code>git add -f filename</code></td>
-                <td>Forcefully add a file.</td>
+                <td>git stash apply</td>
+                <td>Retrieve the stashed changes</td>
             </tr>
             <tr>
-                <td><code>git rm --cached filename</code></td>
-                <td>Unstage a file.</td>
+                <td>git stash list</td>
+                <td>Get the list of stashes</td>
             </tr>
             <tr>
-                <td><code>git commit -m "message"</code></td>
-                <td>Commit staged changes with a message.</td>
+                <td>git stash clear</td>
+                <td>Clear all stashes</td>
             </tr>
             <tr>
-                <td><code>git commit -m "message" filename</code></td>
-                <td>Commit a specific file with a message.</td>
+                <td>git stash pop</td>
+                <td>Delete the first stash</td>
             </tr>
             <tr>
-                <td><code>git commit --amend -m "message"</code></td>
-                <td>Amend the most recent commit with a new message.</td>
+                <td>git stash drop</td>
+                <td>Delete the latest stash</td>
             </tr>
             <tr>
-                <td><code>git commit --amend --author "username &lt;email&gt;"</code></td>
-                <td>Amend the most recent commit with a new author.</td>
+                <td>git stash drop stash@{2}</td>
+                <td>Delete a particular stash</td>
             </tr>
             <tr>
-                <td><code>git commit --amend --no-edit</code></td>
-                <td>Amend the most recent commit without changing the commit message.</td>
+                <td>git remote add origin repo-url</td>
+                <td>Link local repo to central repo</td>
             </tr>
             <tr>
-                <td><code>git reset --hard HEAD~1</code></td>
-                <td>Remove the most recent commit and discard changes.</td>
+                <td>git push -u origin branch-name</td>
+                <td>Push the code from local to central</td>
             </tr>
             <tr>
-                <td><code>git reset --hard HEAD~3</code></td>
-                <td>Remove the last three commits and discard changes.</td>
+                <td>git push -u origin branch-1 branch-2</td>
+                <td>Push the code to multiple branches</td>
             </tr>
             <tr>
-                <td><code>git reset --soft HEAD~1</code></td>
-                <td>Remove the most recent commit but keep the changes
+                <td>git push -u origin --all</td>
+                <td>Push the code to all branches at once</td>
+            </tr>
+            <tr>
+                <td>git clone repo-url</td>
+                <td>Get the code from central to local</td>
+            </tr>
+            <tr>
+                <td>git pull origin branch</td>
+                <td>Get changes from central to local</td>
+            </tr>
+            <tr>
+                <td>git fetch branch-name</td>
+                <td>Fetch the data from central to local</td>
+            </tr>
+            <tr>
+                <td>git fetch --all</td>
+                <td>Fetch changes from all branches in GitHub</td>
+            </tr>
+            <tr>
+                <td>git merge origin/branch</td>
+                <td>Merge the changes from central to local</td>
+            </tr>
+            <tr>
+                <td>git push -u origin --delete branch-name</td>
+                <td>Delete the GitHub branch from local</td>
+            </tr>
+            <tr>
+                <td>git remote rm origin</td>
+                <td>Unlink the GitHub repo</td>
+            </tr>
+            <tr>
+                <td>git remote rename old-link new-link</td>
+                <td>Change the repo link</td>
+            </tr>
+            <tr>
+                <td>git remove -v</td>
+                <td>View linked repositories</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
