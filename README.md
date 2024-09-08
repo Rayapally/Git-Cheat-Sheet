@@ -1,60 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Cheat Sheet</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        code {
-            background-color: #f9f9f9;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Cheat Sheet</title>
 </head>
 <body>
-    <h1>Git Cheat Sheet</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Commands</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>git init</code></td>
-                <td>Initialize a new Git repository in the current directory</td>
-            </tr>
-            <tr>
-                <td><code>git config user.name "username"</code></td>
-                <td>Set the name for commits</td>
-            </tr>
-            <tr>
-                <td><code>git config user.email "useremail"</code></td>
-                <td>Set the email for commits</td>
-            </tr>
-            <tr>
-                <td><code>git add filename</code></td>
-                <td>Add a specific file to the staging area</td>
-            </tr>
-            <tr>
-                <td><code>git add .</code></td>
-                <td>Add all changes in the current directory to the staging area</td>
-            </tr>
-            <tr>
+  <h1>Git Cheat Sheet</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>yum install git -y</code></td>
+        <td>Install Git on Linux (package manager)</td>
+      </tr>
+      <tr>
+        <td><code>git init .</code></td>
+        <td>Initialize an empty Git repository in the current directory</td>
+      </tr>
+      <tr>
+        <td><code>git config user.name "username"</code></td>
+        <td>Configure user name for commits</td>
+      </tr>
+      <tr>
+        <td><code>git config user.email "email"</code></td>
+        <td>Configure user email for commits</td>
+      </tr>
+<tr>
+        <td><code>git add filename</code></td>
+        <td>Add a specific file to the staging area</td>
+      </tr>
+      <tr>
+        <td><code>git add *</code></td>
+        <td>Add all files and folders in the current directory to the staging area</td>
+      </tr>
+      <tr>
+        <td><code>git add .</code></td>
+        <td>Add all files (including hidden files) in the current directory to the staging area</td>
+      </tr>
+      <tr>
+        <td><code>git add -f filename</code></td>
+        <td>Track a file forcefully, even if it has issues</td>
+      </tr>
+      <tr>
+        <td><code>git rm --cached filename</code></td>
+        <td>Untrack a file from the staging area (but keep it in the working directory)</td>
+      </tr>
+        <tr>
+        <td><code>git commit -m "message" filename</code></td>
+        <td>Commit staged changes with a message, including a specific file</td>
+      </tr>
+      <tr>
+        <td><code>git commit -m "message" .</code></td>
+        <td>Commit all tracked changes with a message</td>
+      </tr>
+        <tr>
+        <td><code>git log</code></td>
+        <td>View commit history</td>
+      </tr>
+      <tr>
+        <td><code>git log --oneline</code></td>
+        <td>View commit history with one line per commit</td>
+      </tr>
+      <tr>
+        <td><code>git log -1</code></td>
+        <td>View the latest commit</td>
+      </tr>
+      <tr>
+        <td><code>git log -3</code></td>
+        <td>View the latest 3 commits</td>
+      </tr>
+      <tr>
+        <td><code>git log --follow --all filename</code></td>
+        <td>View the history of a specific file (including renames)</td>
+      </tr>
+      <tr>
+        <td><code>git show commit_id --name-only</code></td>
+        <td>Show all commit details with file names</td>
+      </tr>
+      <tr>
+        <td><code>git show commit_id --stat</code></td>
+        <td>See the history of a file (modifications, additions, deletions)</td>
+      </tr>
+        <tr>
+        <td><code>git commit --amend -m "message"</code></td>
+        <td>Change the commit message for the latest commit</td>
+      </tr>
+      <tr>
+        <td><code>git commit --amend --author "username &lt;email&gt;"</code></td>
+        <td>Change the author of the latest commit</td>
+      </tr>
+      <tr>
+        <td><code>git commit --amend --no-edit</code></td>
+        <td>Commit changes with the previous commit message</td>
+      </tr>
+        <tr>
+        <td><code>git reset --hard HEAD~1</code></td>
+        <td>Delete the latest commit along with changes (use with caution)</td>
+      </tr>
+      <tr>
+        <td><code>git reset --hard HEAD~3</code></td>
+        <td>Delete the latest 3 commits along with changes (use with caution)</td>
+      </tr>
+      <tr>
+        <td><code>git reset --
                 <td><code>git add -A</code></td>
                 <td>Add all changes (including deletions) to the staging area</td>
             </tr>
